@@ -1,0 +1,14 @@
+============ TEMAS ================================================================================
+CSS Modules
+Sass
+--------------------------------------------------------------------------------
+
+**  Criando o Projeto
+npx create-next-app frontend
+yarn add typescript @types/react @types/node -D
+--------------------------------------------------------------------------------
+** Estilizando
+yarn add sass
+--------------------------------------------------------------------------------
+** Icones  // https://react-icons.github.io/react-icons/
+yarn add react-icons 

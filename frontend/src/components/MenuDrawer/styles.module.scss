@@ -1,0 +1,83 @@
+.titleBar {
+  width: 100%;
+  height: 70px;
+
+  //border-width: 1px;
+  //border-style: solid;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.imagem {
+  width: 100%;
+  height: 70px;
+  padding: 3px;
+
+  //border-width: 1px;
+  //border-style: solid;
+}
+
+.titulo {
+  width: 300vh;
+  height: 70px;
+  //padding-left: 10px;
+
+  //border-width: 1px;
+  //border-style: solid;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #FFD700;
+  }
+}
+
+.userIn {
+  width: 100%;
+  height: 70px;
+  padding: .8vh;
+
+  //border-width: 1px;
+  //border-style: solid;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  h1 {
+    font-size: 12px;
+    font-weight: 700;
+    color: #000000;
+  }
+}
+
+.botao {
+  width: 25vh;
+  height: 70px;
+
+  //border-width: 1px;
+  //border-style: solid;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  button {
+    padding: 7px;
+    margin-right: 1px;
+    border: 0;
+    background: none;
+    color: #FFD700;
+
+    :hover {
+      color: #ff3f4b;
+    }
+  }
+}
+

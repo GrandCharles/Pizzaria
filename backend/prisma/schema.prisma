@@ -1,0 +1,84 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Usuario {
+  id         String    @id @default(uuid())
+  nome       String    @db.VarChar(40)
+  email      String    @db.VarChar(50)
+  senha      String
+  ativo      Boolean   @default(true)
+  created_at DateTime? @default(now())
+  updated_at DateTime? @default(now())
+
+  @@map("usuarios")
+}
+
+model Categoria {
+  id         String    @id @default(uuid())
+  codigo     Int       @default(autoincrement())
+  nome       String    @db.VarChar(40)
+  created_at DateTime? @default(now())
+  updated_at DateTime? @default(now())
+  produto    Produto[]
+
+  @@map("categorias")
+}
+
+model Produto {
+  id          String    @id @default(uuid())
+  idCategoria String
+  codigo      Int       @default(autoincrement())
+  nome        String    @db.VarChar(40)
+  descricao   String    @db.VarChar(40)
+  unidade     String    @db.VarChar(3)
+  valor       Decimal   @db.Decimal(9, 2)
+  imagem      String
+  created_at  DateTime? @default(now())
+  updated_at  DateTime? @default(now())
+
+  categoria        Categoria          @relation(fields: [idCategoria], references: [id])
+  pedidosItem PedidosItem[]
+
+  @@map("produtos")
+}
+
+model Pedido {
+  id          String    @id @default(uuid())
+  codigo      Int       @default(autoincrement())
+  mesa        String    @db.VarChar(10)
+  nomeCliente String?   @db.VarChar(40)
+  enviado     Boolean   @default(false) // Enviado para Cozinha
+  preparado   Boolean   @default(false) // Preparado na cozinha
+  finalizado  Boolean   @default(false)
+  total       Decimal?  @db.Decimal(9, 2)
+  created_at  DateTime? @default(now())
+  updated_at  DateTime? @default(now())
+
+  pedidosItem PedidosItem[]
+
+  @@map("pedidos")
+}
+
+model PedidosItem {
+  id         String    @id @default(uuid())
+  idPedido   String
+  idProduto  String
+  quantidade Int
+  total      Decimal   @db.Decimal(9, 2)
+  created_at DateTime? @default(now())
+  updated_at DateTime? @default(now())
+
+  pedidos Pedido @relation(fields: [idPedido], references: [id])
+  produto Produto @relation(fields: [idProduto], references: [id])
+
+  @@map("pedidosItens")
+}

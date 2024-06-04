@@ -1,0 +1,37 @@
+
+
+.titleBar {
+  width: 100%;
+  height: 20px;
+  padding: 10px;
+  margin-bottom: 10px;
+  
+  border-bottom: 2px solid #8a8a8a;;
+  //border-top-left-radius: 5px;
+  //border-top-right-radius: 5px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h1 {
+    margin-bottom: 7px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #500569;
+  }
+
+  button {
+    padding: 5px;
+    //margin-left: 1px;
+    border: 0;
+    background: none;
+    color: #0000FF;
+
+    :hover {
+      color: #ff3f4b;
+    }
+}
+
+  //background-color: #F0F8FF;
+}

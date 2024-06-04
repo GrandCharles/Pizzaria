@@ -1,0 +1,52 @@
+Projeto Pizza
+============ TEMAS ================================================================================
+Dracula
+Color Highlight
+Live Server
+CSS Modules
+Prisma
+Prisma Insider
+Prettier - Code formatter   // habilitar em Files/preferences/settings/format on save
+---------------------------------------------------------------------------------------------------
+==== Criando Projeto
+* CMD *  
+yarn init -y         
+yarn add typescript -D
+yarn add express
+yarn add @types/express -D               // Tipagem do express
+yarn tsc --init
+-----------------------------------------------------------------------------------------------------
+yarn add ts-node-dev -D
+-----------------------------------------------------------------------------------------------------
+** Tratar erro pelo express **
+yarn add express-async-errors
+-----------------------------------------------------------------------------------------------------
+ ** Cors ** determina se navegadores vão bloquear código JavaScript de acessarem respostas provindas de requisições entre origens.
+ yarn add cors
+ yarn add @types/cors -D    // Tipagem do cors
+-----------------------------------------------------------------------------------------------------
+ ** Prisma **   Cruds: https://www.prisma.io/docs/orm/prisma-client/queries/crud
+yarn add prisma
+yarn add @prisma/client
+npx prisma init
+yarn prisma migrate dev     // Criar a migration "create-table-pizzaDB"
+yarn add dotenv            // Acessar variáveis de ambiente
+-----------------------------------------------------------------------------------------------------
+** Postgres ** 
+SELECT usename FROM pg_user;
+
+**Criando função uuid_generate_v4() **
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp"
+-----------------------------------------------------------------------------------------------------
+** Criptografia 
+yarn add bcryptjs
+yarn add @types/bcryptjs -D
+-----------------------------------------------------------------------------------------------------
+** Token **  Gerar Hash: https://www.md5hashgenerator.com/     Ler um Token: https://jwt.io/
+yarn add jsonwebtoken 
+yarn add @types/jsonwebtoken -D
+-----------------------------------------------------------------------------------------------------
+** Manupulação de Imagens
+yarn add multer
+yarn add @types/multer -D
+-----------------------------------------------------------------------------------------------------
